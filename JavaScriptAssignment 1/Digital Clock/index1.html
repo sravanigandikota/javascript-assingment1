@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Digital clock</title>
-    <link href="style1.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    Digital clock
-    <script src="script1.js"></script>
-<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <header id="head">DIGITAL CLOCK</header>
+        <div id="clock"></div>
+        <script src="script1.js"></script> 
+       <div class="date">
+        <script>
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, "0");
+            var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+            var yyyy = today.getFullYear();
+    
+            today = dd+ "/" + mm + "/" + yyyy;
+            document.write(today);
+          </script>
+       </div>
+    <div class="button">
+
+             <button class="btn" onclick="startClock()">START</button>
+            <button class="btn" onclick="stopClock()">STOP</button>
+     </div> 
+    </div>
 </body>
 </html>

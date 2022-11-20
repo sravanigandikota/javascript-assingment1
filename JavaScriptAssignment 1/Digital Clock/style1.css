@@ -1,31 +1,55 @@
-function showTime ( )
-{
-    var date = new Date();
-    var h = date.getHours(); 
-     
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var session = "AM";
-    
-    if(h == 0){
-        h = 12;
-    }
-    
-    if(h > 12){
-        h = h - 12;
-        session = "PM";
-    }
-    
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-    
-    var time = h + ":" + m + ":" + s + " " + session;
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
-    
-    setTimeout(showTime, 1000);
-    
+body{
+    justify-content: center;
+    align-items: center;
 }
 
-showTime();
+.container{
+    background-color: rgb(0, 0, 0);
+    width:50vw;
+    height: 50vh;
+    margin: 15vw 0 0 25vw;
+    text-align: center;
+    box-shadow: 6px 10px rgb(78, 68, 68);
+}
+
+#head{
+    color: azure;
+    font-weight: 900;
+    font-size: xx-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 2vh;
+}
+
+.btn{
+    color: azure;
+    background-color: rgb(5, 4, 4);
+    padding: 6px;
+    width: 10vw;
+    height: 8vh;
+    font-size: x-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: 5px groove whitesmoke;
+    cursor: pointer;
+    margin-right: 4vw;
+}
+
+.btn:hover{
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 8px 20px 0 rgba(0,0,0,0.19);
+}
+
+#clock{
+    color:cornsilk;
+    padding: 10vh 0 ;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+
+}
+
+.date{
+    position:relative;
+    bottom: 5vh;
+    text-align: center;
+    font-size: 35px;
+    color: cornsilk;
+    letter-spacing: 3px;
+}
